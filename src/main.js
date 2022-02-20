@@ -1,6 +1,11 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 import 'slick-carousel';
-import './styles/app.scss'
+import './styles/app.scss';
+
+import iconTime from './assets/icons/icon-time.svg';
+import iconPhone from './assets/icons/icon-phone.svg';
+import iconLocation from './assets/icons/icon-location.png';
+import logoShortcut from './assets/logo-shortcut.png';
 
 $(document).ready(() => {
   const rangeTime = ['06:00-08:00', '14:00-18:00', '11:00-18:00', '11:30–23:30', '13:30–15:30']
@@ -59,17 +64,17 @@ $(document).ready(() => {
                   <div class="card__footer">
                     <div class="card__footer__top">
                       <span class="card__footer__time">
-                        <img src="./src/assets/icons/icon-time.svg" alt="Time">
+                        <img src="${iconTime}" alt="Time">
                         <span>${rangeTime[Math.floor((Math.random() * 4) + 1)]}</span>
                       </span>
                       <span class="card__footer__phone">
-                        <img src="./src/assets/icons/icon-phone.svg" alt="Phone">
+                        <img src="${iconPhone}" alt="Phone">
                         <span>${elm.phone}</span>
                       </span>
                     </div>
                     <div class="card__footer__bottom">
                       <span class="card__footer__location">
-                        <img src="./src/assets/icons/icon-location.png" alt="Location">
+                        <img src="${iconLocation}" alt="Location">
                         <span>${elm.address}</span>
                       </span>
                     </div>
@@ -110,11 +115,11 @@ $(document).ready(() => {
                   <div class="card__footer">
                     <div class="card__footer__top">
                       <span class="card__footer__time">
-                        <img src="./src/assets/icons/icon-time.svg" alt="Time">
+                        <img src="${iconTime}" alt="Time">
                         <span>${rangeTime[Math.floor((Math.random() * 4) + 1)]}</span>
                       </span>
                       <span class="card__footer__location">
-                        <img src="./src/assets/icons/icon-location.png" alt="Location">
+                        <img src="${iconLocation}" alt="Location">
                         <span>${elm.address}</span>
                       </span>
                     </div>
@@ -143,7 +148,7 @@ $(document).ready(() => {
                   <div class="card__top">
                     <div class="card__top__left">
                       <div class="card__logo">
-                        <img src="./src/assets/logo-shortcut.png" alt="D&A">
+                        <img src="${logoShortcut}" alt="D&A">
                       </div>
                       <span>D&A Hostel</span>
                     </div>
