@@ -8,3 +8,6 @@ Run project:
 
 Build project: 
 ```npm run build```
+
+Deploy project: 
+```npm run deploy```
