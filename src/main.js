@@ -141,8 +141,11 @@ $(document).ready(() => {
               <article class="card">
                 <div class="card__content">
                   <div class="card__top">
-                    <div class="card__logo">
-                      <img src="./src/assets/logo-shortcut.png" alt="D&A">
+                    <div class="card__top__left">
+                      <div class="card__logo">
+                        <img src="./src/assets/logo-shortcut.png" alt="D&A">
+                      </div>
+                      <span>D&A Hostel</span>
                     </div>
                     <div class="card__published-date">${elm.date.date.substring(0, 10)}</div>
                   </div>
