@@ -4,6 +4,7 @@ import { DEST_DIR, SRC_DIR } from './config/constants'
 
 // https://vitejs.dev/config/
 export const configObj = {
+  base: '/branch8-assigment/',
   build: {
     rollupOptions: {
       input: [
