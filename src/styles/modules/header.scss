@@ -1,0 +1,163 @@
+.header {
+  &__top {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: $color-white;
+    top: 0;
+
+    .container {
+      height: 5.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading-black;
+    font-size: 2.4rem;
+  }
+
+  &__sub-title {
+    font-family: $font-heading;
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    @include styleFor(tablet-and-up) {
+      margin-right: 12rem;
+    }
+  }
+
+  .login {
+    @include styleFor(tablet-and-up) {
+      margin-left: auto;
+    }
+  }
+}
+
+.banner {
+  height: 36rem;
+  background-color: $color-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5.3rem;
+
+  &__item {
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 36rem;
+    position: relative;
+
+    &__overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgb(0, 0, 0, 0.2);
+    }
+  }
+
+  &__title {
+    font-family: $font-heading-black;
+    font-size: 2.4rem;
+    color: $color-white;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+
+    @include styleFor(tablet-and-up) {
+      font-size: 3.6rem;
+    }
+  }
+
+  &__sub-title {
+    font-family: $font-heading;
+    font-size: 1.6rem;
+    color: $color-white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .slick-arrow {
+    display: none !important;
+    cursor: pointer;
+
+    @include styleFor(tablet-and-up) {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      text-indent: -9999px;
+      font-size: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 0;
+      position: absolute;
+      z-index: 10;
+    }
+
+    &::before {
+      content: '';
+      border-top: 0;
+      border-right: 0;
+      border-left: 1px solid $color-white;
+      border-bottom: 1px solid $color-white;
+      width: 8px;
+      height: 8px;
+      display: block;
+      transform: rotate(45deg);
+    }
+
+    &.slick-prev {
+      left: 10px;
+    }
+
+    &.slick-next {
+      right: 10px;
+      transform: rotate(180deg);
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    display: flex;
+    bottom: 10px;
+
+    li {
+      width: 5px;
+      height: 5px;
+      font-size: 0;
+      background-color: $color-text;
+      border-radius: 50%;
+      margin: 0 5px;
+      transition: width 0.2s ease-in-out;
+      cursor: pointer;
+
+      button {
+        border: 0;
+        background-color: transparent;
+        font-size: 0;
+      }
+
+      &.slick-active {
+        width: 20px;
+        background-color: $color-white;
+        border-radius: 40px;
+      }
+    }
+  }
+}

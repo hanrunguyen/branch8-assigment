@@ -1,0 +1,132 @@
+.navigation {
+  display: none;
+
+  @include styleFor(tablet-and-up) {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    font-family: $font-heading;
+    color: #534741;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 4px;
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      bottom: -18px;
+      transition: width 0.2s ease-in-out;
+    }
+  }
+
+  &__item {
+    margin-right: 24px;
+    display: inline-flex;
+    position: relative;
+    height: 100%;
+
+    &:hover,
+    &.active {
+      .navigation__link {
+        opacity: 1;
+
+        &::after  {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+
+  @include styleFor(tablet-and-up) {
+    display: none;
+  }
+
+  > span,
+  > span::before,
+  > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $color-text;
+    transition-duration: .25s;
+  }
+
+  > span::before {
+    content: '';
+    top: -6px;
+  }
+  > span::after {
+    content: '';
+    top: 6px;
+  }
+}
+
+.header-open {
+  .menu__btn {
+    > span {
+      transform: rotate(45deg);
+
+      &::before {
+        top: 0;
+        transform: rotate(0);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+
+    }
+  }
+
+  .navigation {
+    display: block;
+    position: absolute;
+    top: 5.3rem;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 5.3rem);
+    background-color: $color-white;
+    z-index: 9999;
+
+    &__list {
+      padding: 4rem 1.6rem;
+      flex-direction: column;
+    }
+
+    &__item {
+      margin-bottom: 2.5rem;
+    }
+
+    &__link {
+      font-size: 2rem;
+      position: relative;
+
+      &::after {
+        bottom: -0.3rem;
+        height: 0.3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/*================ SETTINGS ================*/
+@import "./settings/_variables";
+@import "./settings/_mixins";
+@import "./settings/font-face";
+
+/*================ LIBRARIES ================*/
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+
+/*================ COMMONS ================*/
+@import './commons/global';
+@import './commons/section';
+
+/*================ MODULES ================*/
+@import './modules/header';
+@import './modules/footer';
+@import './modules/navigation';
+@import './modules/wrapper-loading';
+@import './modules/card';
+@import './modules/featured-stores';
+
+/*================ PAGES ================*/
+@import './pages/homepage.scss';

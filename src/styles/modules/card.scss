@@ -1,0 +1,131 @@
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 1.6rem;
+  box-shadow: 5px 8px 10px #e1e1e1;
+
+  &:hover {
+    .card__image img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__time {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  &__image {
+    overflow: hidden;
+    height: 20rem;
+
+    img {
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__info {
+    padding: 1rem 1.6rem 2rem;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 1.6rem 0;
+  }
+
+  &__logo {
+    background-color: $color-text;
+    border-radius: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 1.5rem;
+    }
+  }
+
+  &__footer {
+    border-top: 0.1rem solid #e7e7e7;
+    padding: 1.6rem;
+
+    img {
+      margin-right: 0.5rem;
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.6rem;
+    }
+
+    &__time,
+    &__phone,
+    &__location {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .tag-list {
+    display: flex;
+    margin-top: 3rem;
+
+    li {
+      border-radius: 2px;
+      font-size: 13px;
+      padding: 0.5rem 1rem;
+      background-color: #f2f2f2;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.card--horizontal {
+  @include styleFor(tablet-and-up) {
+    display: flex;
+  }
+
+  .card__image {
+    @include styleFor(tablet-and-up) {
+      width: 20rem;
+      height: 28rem;
+      flex: 0 0 20rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card__footer {
+    &__top {
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    &__time {
+      width: 100%;
+      margin-bottom: 1rem;
+
+      @include styleFor(tablet-and-up) {
+        width: auto;
+        margin-bottom: 0;;
+      }
+    }
+  }
+}
