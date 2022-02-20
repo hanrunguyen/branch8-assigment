@@ -29,6 +29,11 @@
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
+
+    a {
+      color: $color-text;
+      text-decoration: none;
+    }
   }
 
   &__info {
@@ -84,6 +89,14 @@
     &__location {
       display: flex;
       align-items: center;
+    }
+
+    &__phone,
+    &__location {
+      a {
+        color: $color-text;
+        text-decoration: none;
+      }
     }
   }
 

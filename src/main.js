@@ -9,7 +9,7 @@ import logoShortcut from './assets/logo-shortcut.png';
 
 $(document).ready(() => {
   const rangeTime = ['06:00-08:00', '14:00-18:00', '11:00-18:00', '11:30–23:30', '13:30–15:30']
-  const featuredStoreApi = 'https://fakerapi.it/api/v1/custom?title=city&image=image&description=text&date=dateTime&phone=phone&tag1=pokemon&tag2=pokemon&tag3=pokemon&address=streetAddress';
+  const featuredStoreApi = `https://fakerapi.it/api/v1/custom?title=city&image=image&description=text&date=dateTime&phone=phone&tag1=pokemon&tag2=pokemon&tag3=pokemon&address=streetAddress`;
   const eventsApi = 'https://fakerapi.it/api/v1/custom?title=city&image=image&description=text&date=dateTime&phone=phone&tag1=pokemon&tag2=pokemon&tag3=pokemon&address=streetAddress';
   const newsApi = 'https://fakerapi.it/api/v1/custom?title=city&description=text&date=dateTime&phone=phone&address=streetAddress';
   const numberFeaturedStore = 3;
@@ -43,6 +43,7 @@ $(document).ready(() => {
       .then(response => response.json())
       .then(result => {
         const data = result.data;
+        console.log(data)
         let html = '';
         data.forEach((elm, idx) => {
           const tagValues = buildTags(elm);
@@ -51,11 +52,13 @@ $(document).ready(() => {
             html += `
               <article class="card">
                 <div class="card__image">
-                  <img src="${elm.image}" alt="${elm.title}">
+                  <a href="/"><img src="${elm.image}" alt="${elm.title}"></a>
                 </div>
                 <div class="card__content">
                   <div class="card__info">
-                    <h3 class="card__title">${elm.title}</h3>
+                    <h3 class="card__title">
+                      <a href="/">${elm.title}</a>
+                    </h3>
                     <div class="card__description">${trimText(elm.description, 100)}</div>
                     <ul class="tag-list">
                       ${tagValues}
@@ -69,13 +72,13 @@ $(document).ready(() => {
                       </span>
                       <span class="card__footer__phone">
                         <img src="${iconPhone}" alt="Phone">
-                        <span>${elm.phone}</span>
+                        <a href="tel:${elm.phone}">${elm.phone}</a>
                       </span>
                     </div>
                     <div class="card__footer__bottom">
                       <span class="card__footer__location">
                         <img src="${iconLocation}" alt="Location">
-                        <span>${elm.address}</span>
+                        <a href="https://www.google.com/maps" target="_blank">${elm.address}</a>
                       </span>
                     </div>
                   </div>
@@ -101,12 +104,14 @@ $(document).ready(() => {
             html += `
               <article class="card card--horizontal">
                 <div class="card__image">
-                  <img src="${elm.image}" alt="${elm.title}">
+                  <a href="/"><img src="${elm.image}" alt="${elm.title}"></a>
                 </div>
                 <div class="card__content">
                   <div class="card__info">
                     <div class="card__time">${elm.date.date.substring(0, 10)}</div>
-                    <h3 class="card__title">${elm.title}</h3>
+                    <h3 class="card__title">
+                      <a href="/">${elm.title}</a>
+                    </h3>
                     <div class="card__description">${trimText(elm.description, 150)}</div>
                     <ul class="tag-list">
                       ${tagValues}
@@ -120,7 +125,7 @@ $(document).ready(() => {
                       </span>
                       <span class="card__footer__location">
                         <img src="${iconLocation}" alt="Location">
-                        <span>${elm.address}</span>
+                        <a href="https://www.google.com/maps" target="_blank">${elm.address}</a>
                       </span>
                     </div>
                   </div>
@@ -155,7 +160,9 @@ $(document).ready(() => {
                     <div class="card__published-date">${elm.date.date.substring(0, 10)}</div>
                   </div>
                   <div class="card__info">
-                    <h3 class="card__title">${elm.title}</h3>
+                    <h3 class="card__title">
+                      <a href="/">${elm.title}</a>
+                    </h3>
                     <div class="card__description">${elm.description}</div>
                   </div>
                 </div>
