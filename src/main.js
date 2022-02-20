@@ -43,7 +43,6 @@ $(document).ready(() => {
       .then(response => response.json())
       .then(result => {
         const data = result.data;
-        console.log(data)
         let html = '';
         data.forEach((elm, idx) => {
           const tagValues = buildTags(elm);
